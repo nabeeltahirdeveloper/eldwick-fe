@@ -14,3 +14,9 @@ th, td {
   border: 1px solid black;
   padding: 0.5em;
 }
+input:focus{
+  outline: none;
+}
+textarea:focus{
+  outline: none;
+}

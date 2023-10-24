@@ -1,102 +1,1047 @@
-const app= ()=>{
-    return(
-        <div>
-      
+const app = () => {
+  return (
+    <div>
+      <h1>Eldwick Creamery</h1>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          flexDirection: "column",
+          alignItems: "center",
+          textAlign: "center",
+          alignContent: "center",
+          gap: 8,
+        }}
+      >
+        <h1
+          style={{
+            marginLeft: "-72px",
+            fontSize: "50px",
+          }}
+        >
+          MAKE SHEET
+        </h1>
+        <h2
+          style={{
+            fontSize: "40px",
+          }}
+        >
+          Brie By Gum (incl truffle)
+        </h2>
+      </div>
 
-        <h1>Eldwick Creamery</h1>
-        <h2>MAKE SHEET</h2>
-        <h3>Brie By Gum (incl truffle)</h3>
-    
-        <form action="#" method="post">
-            <label>Batch Number: <input type="text" name="batchNumber"/></label>
-            <label>Date: <input type="date" name="date"/></label>
-    
-            {/* <!-- ... Previous sections ... --> */}
-    
-            <h4>Production:</h4>
-            <table>
-                <tr>
-                    <th>Time In Vat</th>
-                    <th>Time Calc. (vat off)</th>
-                    <th>Time/Temp at culture</th>
-                    <th>Time/PH at rennet</th>
-                    <th>Time/PH at mould</th>
-                    <th>Time turn 1 (+6)</th>
-                    {/* <!-- ... --> */}
-                </tr>
-                <tr>
-                    <td><input type="time" name="timeInVat"/></td>
-                    <td><input type="time" name="timeCalcVatOff"/></td>
-                    <td><input type="text" name="timeTempCulture"/></td>
-                    <td><input type="text" name="timePHRennet"/></td>
-                    <td><input type="text" name="timePHMould"/></td>
-                    <td><input type="text" name="timeTurn1"/></td>
-                    {/* <!-- ... --> */}
-                </tr>
-            </table>
-    
-            <h4>Temperature Record:</h4>
-            <table>
-                <tr>
-                    <th>Day 1 AM/PM</th>
-                    <th>Day 2 AM/PM</th>
-                    {/* <!-- ... Continue for 14 days ... --> */}
-                </tr>
-                <tr>
-                    <td><input type="text" name="day1Temp"/></td>
-                    <td><input type="text" name="day2Temp"/></td>
-                    {/* <!-- ... Add other input fields for 14 days ... --> */}
-                </tr>
-            </table>
-    
-            <h4>Final Yield:</h4>
-            <table>
-                <tr>
-                    <th>Total Yield (Kgs)</th>
-                    <th>200g BBG</th>
-                    <th>200g truffle BBG</th>
-                    <th>Cutter BBG</th>
-                    <th>Cutter Truffle BBG</th>
-                    <th>Other</th>
-                </tr>/
-                <tr>
-                    <td><input type="number" name="totalYield"/></td>
-                    <td><input type="number" name="200gBBG"/></td>
-                    <td><input type="number" name="200gTruffleBBG"/></td>
-                    <td><input type="number" name="cutterBBG"/></td>
-                    <td><input type="number" name="cutterTruffleBBG"/></td>
-                    <td><input type="text" name="otherYield"/></td>
-                </tr>
-            </table>
-    
-            <h4>Disposal Details:</h4>
-            <textarea name="disposalDetails" rows="4" cols="50"></textarea>
-    
-            <h4>Comments/Observations:</h4>
-            <textarea name="comments" rows="4" cols="50"></textarea>
-    
-            <h4>Compliance with HACCP/FSMS:</h4>
-            <table>
-                <tr>
-                    <th>Signed</th>
-                    <th>Time</th>
-                    <th>Date</th>
-                </tr>
-                <tr>
-                    <td><input type="text" name="signedCompliance"/></td>
-                    <td><input type="time" name="timeCompliance"/></td>
-                    <td><input type="date" name="dateCompliance"/></td>
-                </tr>
-            </table>
-    
-            <input type="submit" value="Submit"/>
-        </form>
-    
-    
-    
+      <form action="#" method="post">
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginLeft: "163px",
+            gap: 10,
+          }}
+        >
+          <label>
+            Batch Number:{" "}
+            <input
+              style={{ height: "24px", width: "200px" }}
+              type="text"
+              name="batchNumber"
+            />
+          </label>
+          <label>
+            Date:{" "}
+            <input
+              style={{ height: "24px", width: "200px", fontSize: "14px" }}
+              type="date"
+              name="date"
+            />
+          </label>
         </div>
-    )
-}
 
+        {/* <!-- ... Previous sections ... --> */}
+
+        <div
+          style={{
+            marginTop: "24px",
+            display: "flex",
+          }}
+        >
+          <label>
+            Milk{" "}
+            <input
+              style={{
+                borderLeft: "0px",
+                borderRight: "0px",
+                borderTop: "0px",
+              }}
+              type="text"
+            />{" "}
+            litres, Milner Field Farm. Temp{" "}
+            <input
+              style={{
+                borderLeft: "0px",
+                borderRight: "0px",
+                borderTop: "0px",
+              }}
+              type="text"
+            />{" "}
+            degrees c,{" "}
+            <input
+              style={{
+                borderLeft: "0px",
+                borderRight: "0px",
+                borderTop: "0px",
+              }}
+              type="text"
+            />{" "}
+            PH
+          </label>
+        </div>
+
+        {/* <!-- ... Previous sections ... --> */}
+
+        <div
+          style={{
+            marginTop: "20px",
+          }}
+        >
+          <table>
+            <tr>
+              <th>Ingredient</th>
+              <th>Type</th>
+              <th>Supplier</th>
+              <th>Batch</th>
+              <th>BBE</th>
+              <th>Quantity</th>
+            </tr>
+            <tr>
+              <td>Starter</td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Cal. Chl.</td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Rennet</td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Geo</td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>PC</td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Salt</td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Truffle (opt)</td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+            }}
+          >
+            <p>Clean down procedure followed</p>
+            <p>Y/N</p>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "flex-start",
+            }}
+          >
+            <label>
+              Signed : <input type="text" />
+            </label>
+            <label>
+              Time : <input type="text" />
+            </label>
+          </div>
+        </div>
+
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: "8%",
+          }}
+        >
+          <table
+            style={{
+              width: "45%",
+              height: "auto",
+            }}
+          >
+            <tr>
+              <th> Production</th>
+            </tr>
+            <tr>
+              <td>Time in Vat</td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Time Calc. (vat off)</td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Time/Temp at culture</td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Time/PH at rennet</td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Time/Ph at mould</td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Time finished mould</td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Time turn 1 (+6)</td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Time turn 2 (+18)</td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Time /PH salting</td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Second salting (+12)</td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Temp/Time de-mould</td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Time/date into boxes</td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+            </tr>
+            <td>
+              <textarea
+                style={{ border: "none", fontSize: "18px" }}
+                placeholder="Observations"
+                name="text"
+                id="textID"
+              ></textarea>
+            </td>
+          </table>
+          <table
+            style={{
+              width: "45%",
+              height: "auto",
+            }}
+          >
+            <tr>
+              <th>Temperature Record</th>
+            </tr>
+            <tr>
+              <td>Day 1 AM/PM</td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Day 2 AM/PM</td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Day 3 AM/PM</td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Day 4 AM/PM</td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Day 5 AM/PM</td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Day 6 AM/PM</td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Day 7 AM/PM</td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Day 8 AM/PM</td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Day 9 AM/PM</td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Day 10 AM/PM</td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Day 11 AM/PM</td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Day 12 AM/PM</td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Day 13 AM/PM</td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Day 14 AM/PM</td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+            </tr>
+            <td>
+              <textarea
+                name="text"
+                id="text"
+                placeholder="Date Wrapped"
+                style={{ border: "none", fontSize: "18px" }}
+              ></textarea>
+            </td>
+          </table>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: "8%",
+          }}
+        >
+          <table
+            style={{
+              width: "45%",
+              height: "auto",
+            }}
+          >
+            <tr>
+              <th>Final Yield</th>
+            </tr>
+            <tr>
+              <td>Total Yield (Kgs)</td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>200g BBG</td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>200g truffle BBG</td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Cutter BBG</td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Cutter truffle BBG</td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Other</td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+            </tr>
+          </table>
+          <table
+            style={{
+              width: "45%",
+              height: "auto",
+            }}
+          >
+            <tr>
+              <th>Disposal Details</th>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: "8%",
+          }}
+        >
+          <textarea
+            style={{
+              width: "45%",
+              height: "150px",
+              fontSize: "18px",
+            }}
+            name="text"
+            placeholder="Comments/Observations"
+          ></textarea>
+          <table
+            style={{
+              width: "45%",
+              height: "auto",
+            }}
+          >
+            <tr>
+              <th>Compliance with HACCP/FSMS</th>
+            </tr>
+            <tr>
+              <td>Signed</td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Time</td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Date</td>
+              <td>
+                <input
+                  style={{
+                    border: "none",
+                  }}
+                  type="text"
+                />
+              </td>
+            </tr>
+          </table>
+        </div>
+      </form>
+    </div>
+  );
+};
 
 export default app;
