@@ -6,28 +6,32 @@ const app = () => {
         style={{
           display: "flex",
           justifyContent: "center",
-          flexDirection: "column",
           alignItems: "center",
           textAlign: "center",
           alignContent: "center",
           gap: 8,
         }}
       >
-        <h1
-          style={{
-            marginLeft: "-72px",
-            fontSize: "50px",
-          }}
-        >
-          MAKE SHEET
-        </h1>
-        <h2
-          style={{
-            fontSize: "40px",
-          }}
-        >
-          Brie By Gum (incl truffle)
-        </h2>
+        <div>
+          <img src="/vector.jpg" alt="picture" />
+        </div>
+        <div>
+          <h1
+            style={{
+              marginLeft: "-72px",
+              fontSize: "50px",
+            }}
+          >
+            MAKE SHEET
+          </h1>
+          <h2
+            style={{
+              fontSize: "40px",
+            }}
+          >
+            Brie By Gum (incl truffle)
+          </h2>
+        </div>
       </div>
 
       <form action="#" method="post">
