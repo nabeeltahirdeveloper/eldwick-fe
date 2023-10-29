@@ -1,22 +1,14 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 2em;
+.container {
+  display: flex;
 }
-h1, h2, h3 {
-  text-align: center;
+
+.sidebar {
+  width: 30%;
+  border-right: 1px solid #ccc;
+  padding: 1em;
 }
-table {
-  width: 100%;
-  margin-bottom: 1em;
-  border-collapse: collapse;
-}
-th, td {
-  border: 1px solid black;
-  padding: 0.5em;
-}
-input:focus{
-  outline: none;
-}
-textarea:focus{
-  outline: none;
+
+.main {
+  width: 70%;
+  padding: 1em;
 }
