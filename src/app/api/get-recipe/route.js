@@ -1,18 +1,13 @@
-// pages/api/recipes.js
-
+import { NextResponse } from "next/server";
 import clientPromise from "@/lib/mongodb";
 
-export default async function handler(req, res) {
-  if (req.method === 'GET') {
-    try {
-      const client = await clientPromise;
-      const db = client.db('recipes'); // Replace with your database name
+export async function GET() {
+  const client = await clientPromise;
+  const db = client.db();
 
-      const recipes = await db.collection("recipes").find().toArray();
-      return res.status(200).json(recipes);
-    } catch (e) {
-      // Error handling
-      return res.status(500).json({ error: e.message });
-    }
-  }
+  const result = await db.collection("recipes").find().toArray();
+  
+  return NextResponse.json(result).headers({
+    "Cache-Control": "s-maxage=60, stale-while-revalidate",
+  });
 }
