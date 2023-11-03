@@ -487,11 +487,11 @@ export default function RecipeForm({ recipe, fetchData, setSelectedRecipe }) {
     console.log("newRecipe", recipe)
 
     if (recipe) {
-      const res = await axios.post("http://localhost:3000/api/update-recipe", {...newRecipe, id: recipe._id});
+      const res = await axios.post("https://eldwick-fe.vercel.app//api/update-recipe", {...newRecipe, id: recipe._id});
       setSelectedRecipe()
     }
     else {
-      const res = await axios.post('http://localhost:3000/api/add-recipe', newRecipe);
+      const res = await axios.post('https://eldwick-fe.vercel.app//api/add-recipe', newRecipe);
       console.log(res);
     }
     clearData()
@@ -500,7 +500,7 @@ export default function RecipeForm({ recipe, fetchData, setSelectedRecipe }) {
   };
 
   const handleDelete = async () => {
-    const res = await axios.post("http://localhost:3000/api/delete-recipe", {id: recipe._id});
+    const res = await axios.post("https://eldwick-fe.vercel.app//api/delete-recipe", {id: recipe._id});
     setSelectedRecipe()
     fetchData();
     clearData()
