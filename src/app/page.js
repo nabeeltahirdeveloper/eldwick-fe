@@ -14,7 +14,7 @@ export default function Home() {
   const updateRecipe =async (recipe) => {
     console.log("recipe", recipe);
     const result = await axios.post(
-      'https://eldwick-fe.vercel.app/api/update-recipe',
+      '/api/update-recipe',
       recipe
     );
     setRecipes(recipes.map((r) => (r._id === recipe._id ? recipe : r)));
@@ -22,7 +22,7 @@ export default function Home() {
 
   async function fetchData() {
     const result = await axios.get(
-      'https://eldwick-fe.vercel.app/api/get-recipe'
+      '/api/get-recipe'
     );
     setRecipes(result.data);
   }
