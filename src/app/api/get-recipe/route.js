@@ -6,6 +6,15 @@ export async function GET() {
     const client = await clientPromise;
     const db = await client.db();
     const result = await db.collection("recipes").find().toArray();
-    return NextResponse.json(result);
+    const response = new NextResponse(JSON.stringify(result), {
+        status: 200,
+        headers: {
+            'Content-Type': 'application/json',
+            'Cache-Control': 'no-store, max-age=0'
+        },
+    });
+
+    return response;
+
     }
     
