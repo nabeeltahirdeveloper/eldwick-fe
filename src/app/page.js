@@ -21,7 +21,7 @@ export default function Home() {
   }
 
   async function fetchData() {
-    const result = await axios.get(
+    const result = await axios.post(
       '/api/get-recipe'
     );
     setRecipes(result.data);
