@@ -25,9 +25,13 @@
   .temperature-record table,
   .final-yield-table table,
   .disposal-details-table table {
-    width: 50%;
+    width: 90%;
     border-collapse: collapse;
+    background-color: aqua;
     margin-bottom: 50px;
+
+  
+    
   }
   
   .ingredient-table th,

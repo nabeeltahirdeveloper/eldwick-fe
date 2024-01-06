@@ -13,7 +13,7 @@ const poppins = Poppins({
 
 export default function RecipeList({ recipes, setSelectedRecipe }) {
   return (
-    <div className={`left-panel ${poppins.className}`}>
+    <div style={{backgroundColor:"lightgrey"}} className={`left-panel ${poppins.className}`}>
     {recipes.map((recipe, index) => (
         <div key={index} className="recipe-list-item" onClick={() => setSelectedRecipe(recipe)}>
             <span className="recipe-name">{recipe.batchNo}</span>
