@@ -564,7 +564,7 @@ export default function RecipeForm({ recipe, fetchData, setSelectedRecipe }) {
   );
   return (
     <div className={`main-panel ${poppins.className}`}>
-      <h1 className={poppins.className}>MAKE SHEET</h1>{" "}
+      <h1 style={{color:"purple" ,fontWeight:"bold",fontSize:"40px"}} className={poppins.className}>MAKE SHEET</h1>{" "}
       {/* Optional: Add a title if you'd like */}
       {/* <p className={poppins.className} style={{
         fontFamily: poppins
@@ -631,7 +631,9 @@ export default function RecipeForm({ recipe, fetchData, setSelectedRecipe }) {
           )}
         </div>
         <div className="ingredient-table">
-          <table border="1">
+          <table border="1" style={{ width: "100%",
+                backgroundColor:"lightgrey",
+                marginTop:"50px"}}>
             <tr>
               <th>Ingredient</th>
               <th>Type</th>
@@ -1087,6 +1089,9 @@ export default function RecipeForm({ recipe, fetchData, setSelectedRecipe }) {
               style={{
                 float: "left",
                 marginRight: "20px",
+                width: "100%",
+                backgroundColor:"lightgrey",
+                marginTop:"50px"
               }}
             >
               <tr>
@@ -1121,9 +1126,11 @@ export default function RecipeForm({ recipe, fetchData, setSelectedRecipe }) {
                 </td>
               </tr>
             </table>
-            <table border="1">
+            <table border="1" style={{ width: "100%",
+                backgroundColor:"lightgrey",
+                marginTop:"50px"}}>
               <tr>
-                <th colSpan="2">Production</th>
+                <th style={{fontWeight:"600",fontSize:"30px",paddingVertical:"10px", color:"purple"}} colSpan="2">Production</th>
               </tr>
               <tr>
                 <td>Time In Vat</td>
@@ -1138,8 +1145,7 @@ export default function RecipeForm({ recipe, fetchData, setSelectedRecipe }) {
               <tr>
                 <td>Time Calc. (vat off)</td>
                 <td>
-                 
-                <input
+                  <input
                     type="text"
                     value={timeCalc}
                     onChange={(e) => setTimeCalc(e.target.value)}
@@ -1149,34 +1155,69 @@ export default function RecipeForm({ recipe, fetchData, setSelectedRecipe }) {
               <tr>
                 <td>Time/Temp at culture</td>
                 <td>
-                <select style={{width:"93%",padding:10,borderRadius:5}} name="time calc" id="" value={timeCulture} onChange={(e)=>{setTimeCulture(e.target.value)}}>
+                  <select
+                    style={{ width: "93%", padding: 10, borderRadius: 5 }}
+                    name="time calc"
+                    id=""
+                    value={timeCulture}
+                    onChange={(e) => {
+                      setTimeCulture(e.target.value);
+                    }}
+                  >
                     {temperatureArray.map((item, i) => {
                       return <option value={item}>{item}</option>;
                     })}
                   </select>
-                 
                 </td>
               </tr>
               <tr>
                 <td>Time/PH at rennet</td>
                 <td>
-                <select style={{width:"93%",padding:10,borderRadius:5,marginTop:7}} name="time calc" id="" value={timeRennet} onChange={(e)=>{setTimeRennet(e.target.value)}}>
-                    {Array.from({ length: 71 }, (_, index) => index + 50).map((item, i) => {
-                      return <option value={item}>{item} mins</option>;
-                    })}
+                  <select
+                    style={{
+                      width: "93%",
+                      padding: 10,
+                      borderRadius: 5,
+                      marginTop: 7,
+                    }}
+                    name="time calc"
+                    id=""
+                    value={timeRennet}
+                    onChange={(e) => {
+                      setTimeRennet(e.target.value);
+                    }}
+                  >
+                    {Array.from({ length: 71 }, (_, index) => index + 50).map(
+                      (item, i) => {
+                        return <option value={item}>{item} mins</option>;
+                      }
+                    )}
                   </select>
-                
                 </td>
               </tr>
               <tr>
                 <td>Time/PH at mould</td>
                 <td>
-                <select style={{width:"93%",padding:10,borderRadius:5,marginTop:7}} name="time calc" id="" value={timeMould} onChange={(e)=>{setTimeMould(e.target.value)}}>
-                    {Array.from({ length: 121 }, (_, index) => index + 120).map((item, i) => {
-                      return <option value={item}>{item} mins</option>;
-                    })}
+                  <select
+                    style={{
+                      width: "93%",
+                      padding: 10,
+                      borderRadius: 5,
+                      marginTop: 7,
+                    }}
+                    name="time calc"
+                    id=""
+                    value={timeMould}
+                    onChange={(e) => {
+                      setTimeMould(e.target.value);
+                    }}
+                  >
+                    {Array.from({ length: 121 }, (_, index) => index + 120).map(
+                      (item, i) => {
+                        return <option value={item}>{item} mins</option>;
+                      }
+                    )}
                   </select>
-                
                 </td>
               </tr>
               <tr>
@@ -1212,24 +1253,61 @@ export default function RecipeForm({ recipe, fetchData, setSelectedRecipe }) {
               <tr>
                 <td>Time / PH salting</td>
                 <td>
-                
-                <select style={{width:"93%",padding:10,borderRadius:5,marginTop:7}} name="time calc" id="" value={timeSalt} onChange={(e)=>{setTimeSalt(e.target.value)}}>
-                    {Array.from({ length: 21 }, (_, index) => (520 - index * 5) / 100).map((item, i) => {
-                      return <option value={item.toFixed(2)}>{  item.toFixed(2)} mins</option>;
+                  <select
+                    style={{
+                      width: "93%",
+                      padding: 10,
+                      borderRadius: 5,
+                      marginTop: 7,
+                    }}
+                    name="time calc"
+                    id=""
+                    value={timeSalt}
+                    onChange={(e) => {
+                      setTimeSalt(e.target.value);
+                    }}
+                  >
+                    {Array.from(
+                      { length: 21 },
+                      (_, index) => (520 - index * 5) / 100
+                    ).map((item, i) => {
+                      return (
+                        <option value={item.toFixed(2)}>
+                          {item.toFixed(2)} mins
+                        </option>
+                      );
                     })}
                   </select>
-                
                 </td>
               </tr>
               <tr>
                 <td>Second salting (+12)</td>
                 <td>
-                <select style={{width:"93%",padding:10,borderRadius:5,marginTop:7}} name="time calc" id="" value={timeSalt2} onChange={(e)=>{setTimeSalt2(e.target.value)}}>
-                    {Array.from({ length: 21 }, (_, index) => (520 - index * 5) / 100).map((item, i) => {
-                      return <option value={item.toFixed(2)}>{  item.toFixed(2)} mins</option>;
+                  <select
+                    style={{
+                      width: "93%",
+                      padding: 10,
+                      borderRadius: 5,
+                      marginTop: 7,
+                    }}
+                    name="time calc"
+                    id=""
+                    value={timeSalt2}
+                    onChange={(e) => {
+                      setTimeSalt2(e.target.value);
+                    }}
+                  >
+                    {Array.from(
+                      { length: 21 },
+                      (_, index) => (520 - index * 5) / 100
+                    ).map((item, i) => {
+                      return (
+                        <option value={item.toFixed(2)}>
+                          {item.toFixed(2)} mins
+                        </option>
+                      );
                     })}
                   </select>
-                 
                 </td>
               </tr>
               <tr>
@@ -1281,10 +1359,13 @@ export default function RecipeForm({ recipe, fetchData, setSelectedRecipe }) {
               border="1"
               style={{
                 float: "left",
+                width: "100%",
+                backgroundColor:"lightgrey",
+                marginTop:"50px"
               }}
             >
               <tr>
-                <th colSpan={3}>Temperature Record</th>
+                <th style={{fontWeight:"600",fontSize:"30px",paddingVertical:"10px",color:"purple"}} colSpan={3}>Temperature Record</th>
               </tr>
               {dayData.map((day) => (
                 <tr>
@@ -1342,13 +1423,17 @@ export default function RecipeForm({ recipe, fetchData, setSelectedRecipe }) {
         <div>
           <div>
             <table
-              border="1"
+              // border="1"
               style={{
                 flex: "1",
+                width: "100%",
+                backgroundColor:"lightgrey",
+                marginTop:"50px"
+
               }}
             >
               <tr>
-                <th colSpan="2">Final Yield</th>
+                <th style={{fontWeight:"600",fontSize:"30px",paddingVertical:"10px",color:"purple"}} colSpan="2">Final Yield</th>
               </tr>
               <tr>
                 <td>Total Yield (Kgs)</td>
@@ -1416,10 +1501,14 @@ export default function RecipeForm({ recipe, fetchData, setSelectedRecipe }) {
               border="1"
               style={{
                 flex: "1",
+                width: "100%",
+                backgroundColor:"lightgrey",
+
+                marginTop: "30px",
               }}
             >
               <tr>
-                <th colSpan="2">Disposal Details</th>
+                <th style={{fontWeight:"600",fontSize:"30px",paddingVertical:"10px",color:"purple"}} colSpan="2">Disposal Details</th>
               </tr>
               {["one", "two", "three", "four", "five", "six"].map((num) => (
                 <tr>
@@ -1451,13 +1540,16 @@ export default function RecipeForm({ recipe, fetchData, setSelectedRecipe }) {
               ))}
             </table>
             <table
-              border="1"
+              border="2"
               style={{
+                backgroundColor:"lightgrey",
                 flex: "1",
+                width: "100%",
+                marginTop: "50px",
               }}
             >
               <tr>
-                <th colSpan="2">Compliance with HACCP/FSMS</th>
+                <th style={{fontWeight:"600",fontSize:"30px",paddingVertical:"10px",color:"purple"}} colSpan="2">Compliance with HACCP/FSMS</th>
               </tr>
               <tr>
                 <td>Signed</td>
@@ -1491,10 +1583,11 @@ export default function RecipeForm({ recipe, fetchData, setSelectedRecipe }) {
               </tr>
             </table>
             <textarea
+              width="100%"
               name=""
               placeholder="Observations"
               id=""
-              cols="30"
+              cols="50"
               rows="10"
               value={observations}
               onChange={(e) => setObservations(e.target.value)}
